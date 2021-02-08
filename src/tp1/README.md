@@ -7,8 +7,6 @@ Programar el paradigma de Stroop en castellano y otro idioma (inglés) utilizand
 - [Referencias](#referencias)
 
 ## Consigna
-- https://www.psytoolkit.org/doc2.6.1/example_stroop.html
-- https://www.psytoolkit.org/experiment-library/experiment_stroop.html
 - El experimento debe tener 24 ensayos por condición (total 96 ensayos). O sea, hay que
 editar el experimento original, que tenía 20 ensayos en total.
     - 24 español congruente
