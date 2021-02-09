@@ -1,0 +1,102 @@
+bitmaps
+  instruction1
+  instruction2
+  correct
+  mistake
+  fixpoint
+  redgreen
+  redblue
+  redred
+  greenred
+  greenblue
+  greengreen
+  bluegreen
+  bluered
+  blueblue
+  rojoverde
+  rojoazul
+  rojorojo
+  verderojo
+  verdeazul
+  verdeverde
+  azulverde
+  azulrojo
+  azulazul     
+
+fonts
+  arial 20
+
+# table: write condition,stimulus,response
+
+table stroop
+  "red green      0 0" redgreen      2
+  "red blue       0 0" redblue       3
+  "red red        1 0" redred        1
+  "red red        1 0" redred        1
+  "green red      0 0" greenred      1
+  "green blue     0 0" greenblue     3
+  "green green    1 0" greengreen    2
+  "green green    1 0" greengreen    2
+  "blue green     0 0" bluegreen     2
+  "blue red       0 0" bluered       1
+  "blue blue      1 0" blueblue      3
+  "blue blue      1 0" blueblue      3
+  "rojo verde     0 1" rojoverde     5
+  "rojo azul      0 1" rojoazul      4
+  "rojo rojo      1 1" rojorojo      1
+  "rojo rojo      1 1" rojorojo      1
+  "verde rojo     0 1" verderojo     1
+  "verde azul     0 1" verdeazul     4
+  "verde verde    1 1" verdeverde    5
+  "verde verde    1 1" verdeverde    5
+  "azul verde     0 1" azulverde     5
+  "azul rojo      0 1" azulrojo      1
+  "azul azul      1 1" azulazul      4
+  "azul azul      1 1" azulazul      4
+
+
+task stroop
+  table stroop
+  keys r g b a v
+  delay 500
+  show bitmap fixpoint # stimulus 1
+  delay 200
+  clear 1 # remove fixpoint 
+  delay 100
+  show bitmap @2 # stimulus 2
+  readkey @3 2000
+  clear 2 # remove stimulus 2
+  if STATUS == CORRECT
+    show bitmap correct # stimulus 3 (feedback)
+  fi
+  if STATUS != CORRECT  # stimulus 3 (feedback)
+    show bitmap mistake
+  fi
+  delay 500
+  clear 3 # remove feedback stimulus
+  save BLOCKNAME @1 TABLEROW KEY STATUS RT
+
+message instruction1
+
+message instruction2
+
+block training
+  tasklist
+    stroop 3  # run the stroop task 40 trials.
+  end
+  feedback
+    text -100 -50  "Your speed in correct trials in English / Spanish"
+    set &StroopCon mean c9 ; select c4 == 1 && c5 == 0
+    set &StroopInc mean c9 ; select c4 == 0 && c5 == 0
+    set &StroopConSpanish mean c9 ; select c4 == 1  && c5 == 1
+    set &StroopIncSpanish mean c9 ; select c4 == 0  && c5 == 1
+    set &StroopEffect expression &StroopInc - &StroopCon
+    set &StroopEffectSpanish expression &StroopIncSpanish - &StroopConSpanish
+    text -100 0  &StroopCon ; prefix "congruent (ENG):   " ; postfix " ms" ; select c4 == 1  && c5 == 0
+    text -100 50 &StroopInc ; prefix "incongruent (ENG): " ; postfix " ms" ; select c4 == 0  && c5 == 0
+    text -100 90  &StroopConSpanish ; prefix "congruent (ESP):   " ; postfix " ms" ; select c4 == 1  && c5 == 1
+    text -100 130 &StroopIncSpanish ; prefix "incongruent (ESP): " ; postfix " ms" ; select c4 == 0  && c5 == 1
+    text -100 170 &StroopEffect ; prefix "Your Stroop effect is incongruent minus congruent (ENG): " ; postfix " ms"
+    text -100 210 &StroopEffectSpanish ; prefix "Your Stroop effect is incongruent minus congruent (ESP): " ; postfix " ms"
+    text -100 250 "Press space key to end"
+  end
