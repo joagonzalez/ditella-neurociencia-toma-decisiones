@@ -4,23 +4,24 @@ bitmaps
   correct
   mistake
   fixpoint
-  yellowyellow 
-  yellowgreen  
-  yellowblue   
-  yellowred    
-  redyellow    
-  redgreen     
-  redblue      
-  redred       
-  greenyellow  
-  greengreen   
-  greenblue    
-  greenred     
-  blueyellow   
-  bluegreen    
-  blueblue     
-  bluered 
-  prueba     
+  redgreen
+  redblue
+  redred
+  greenred
+  greenblue
+  greengreen
+  bluegreen
+  bluered
+  blueblue
+  rojoverde
+  rojoazul
+  rojorojo
+  verderojo
+  verdeazul
+  verdeverde
+  azulverde
+  azulrojo
+  azulazul     
 
 fonts
   arial 20
@@ -28,26 +29,35 @@ fonts
 # table: write condition,stimulus,response
 
 table stroop
-  "yellow yellow 1" yellowyellow 4
-  "yellow green  0" yellowgreen  2
-  "yellow blue   0" yellowblue   3
-  "yellow red    0" yellowred    1
-  "red yellow    0" redyellow    4
-  "red green     0" redgreen     2
-  "red blue      0" redblue      3
-  "red red       1" redred       1
-  "green yellow  0" greenyellow  4
-  "green green   1" greengreen   2
-  "green blue    0" greenblue    3
-  "green red     0" greenred     1
-  "blue yellow   0" blueyellow   4
-  "blue green    0" bluegreen    2
-  "blue blue     1" blueblue     3
-  "blue red      0" bluered      1
+  "red green      0 0" redgreen      2
+  "red blue       0 0" redblue       3
+  "red red        1 0" redred        1
+  "red red        1 0" redred        1
+  "green red      0 0" greenred      1
+  "green blue     0 0" greenblue     3
+  "green green    1 0" greengreen    2
+  "green green    1 0" greengreen    2
+  "blue green     0 0" bluegreen     2
+  "blue red       0 0" bluered       1
+  "blue blue      1 0" blueblue      3
+  "blue blue      1 0" blueblue      3
+  "rojo verde     0 1" rojoverde     2
+  "rojo azul      0 1" rojoazul      3
+  "rojo rojo      1 1" rojorojo      1
+  "rojo rojo      1 1" rojorojo      1
+  "verde rojo     0 1" verderojo     1
+  "verde azul     0 1" verdeazul     3
+  "verde verde    1 1" verdeverde    2
+  "verde verde    1 1" verdeverde    2
+  "azul verde     0 1" azulverde     2
+  "azul rojo      0 1" azulrojo      1
+  "azul azul      1 1" azulazul      3
+  "azul azul      1 1" azulazul      3
+
 
 task stroop
   table stroop
-  keys r g b y
+  keys r g b
   delay 500
   show bitmap fixpoint # stimulus 1
   delay 200
@@ -58,8 +68,6 @@ task stroop
   clear 2 # remove stimulus 2
   if STATUS == CORRECT
     show bitmap correct # stimulus 3 (feedback)
-    delay 300
-    show bitmap prueba
   fi
   if STATUS != CORRECT  # stimulus 3 (feedback)
     show bitmap mistake
@@ -67,22 +75,3 @@ task stroop
   delay 500
   clear 3 # remove feedback stimulus
   save BLOCKNAME @1 TABLEROW KEY STATUS RT
-
-message instruction1
-
-message instruction2
-
-block training
-  tasklist
-    stroop 40  # run the stroop task 40 trials.
-  end
-  feedback
-    text -100 0  "Your speed in correct trials"
-    set &StroopCon mean c8 ; select c4 == 1 && c7 == 1
-    set &StroopInc mean c8 ; select c4 == 0 && c7 == 1
-    set &StroopEffect expression &StroopInc - &StroopCon
-    text -100 50  &StroopCon ; prefix "congruent:   " ; postfix " ms" ; select c4 == 1 && c7 == 1
-    text -100 100 &StroopInc ; prefix "incongruent: " ; postfix " ms" ; select c4 == 0 && c7 == 1
-    text -100 150 &StroopEffect ; prefix "Your Stroop effect is incongruent minus congruent: " ; postfix " ms"
-    text -100 200 "Press space key to end"
-  end
