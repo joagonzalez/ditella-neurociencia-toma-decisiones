@@ -13,7 +13,7 @@ import numpy as np
 from scipy import stats
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
-from pandas import read_excel
+# from pandas import read_excel
 
 class DataAnalysis:
 
