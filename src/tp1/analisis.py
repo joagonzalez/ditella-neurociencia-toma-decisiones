@@ -158,7 +158,7 @@ class DataAnalysis:
                         yerr=self.RESULTS[filename][language]['stdIncongruentes']/np.sqrt(len(self.RESULTS[filename][language]['inconsistent'])),
                         label=f'Incongruentes [{self.RESULTS[filename][language]["language"]}]')
 
-        plt.ylim([600,1600])
+        plt.ylim([100,1600])
         plt.xticks([1,1.35], ('1', '2'))
         ax.set_ylabel('Response Time')
         ax.set_title(f'P={str(test[1])} \nFilename: {filename}')
