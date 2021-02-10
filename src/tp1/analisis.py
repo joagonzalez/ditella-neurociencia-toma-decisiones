@@ -20,13 +20,8 @@ class DataAnalysis:
     DIR = '/home/jgonzalez/dev/ditella-neurociencia-toma-decisiones/src/tp1/data/'
     FILES = []
     TRIALS = 20
-    consistent = []
-    inconsistent = []
-    response_time = []
-    muCongruentes = 0
-    muIncongruentes = 0
-    stdCongruentes = 0
-    stdIncongruentes = 0
+    LANGUAGES = []
+    RESULTS = {}
 
 
     def __init__(self):
@@ -59,80 +54,118 @@ class DataAnalysis:
 
         self.FILES = [f for f in listdir(directory) if isfile(join(directory, f))]
 
+    def create_result_structure(self, language):
+        '''
+        Adds generic result structure for a new language detected
+        '''
+        self.RESULTS[language] = {}
+        if language == '0':
+            self.RESULTS[language]['language'] = 'ingles'
+        else:
+            self.RESULTS[language]['language'] = 'español'
+        self.RESULTS[language]['consistent'] = []
+        self.RESULTS[language]['inconsistent'] = []
+        self.RESULTS[language]['difficulty'] = []
+        self.RESULTS[language]['response_time'] = []
+        self.RESULTS[language]['correct_answers'] = []
+        self.RESULTS[language]['muCongruentes'] = 0
+        self.RESULTS[language]['muIncongruentes'] = 0
+        self.RESULTS[language]['stdCongruentes'] = 0
+        self.RESULTS[language]['stdIncongruentes'] = 0
+
     def get_list_files(self):
         return self.FILES
 
     def get_difficulty(self):
         self.read_list_files()
-        difficulty = []
+
         for file in self.FILES:
             tabla = open(self.DIR + file)
             i=0
             while i < self.TRIALS: 
                 line=tabla.readline()
                 parsed_line=line.split()
-                self.response_time.append(float(parsed_line[8]))
-                difficulty.append(int(parsed_line[3]))
+                language = parsed_line[4]
+                if language not in self.LANGUAGES:
+                    self.LANGUAGES.append(language)
+                    self.create_result_structure(language)
+
+                    self.RESULTS[language]['response_time'].append(float(parsed_line[8]))
+                    self.RESULTS[language]['correct_answers'].append(parsed_line[7])
+                    self.RESULTS[language]['difficulty'].append(int(parsed_line[3]))
+                else:
+                    self.RESULTS[language]['response_time'].append(float(parsed_line[8]))
+                    self.RESULTS[language]['correct_answers'].append(parsed_line[7])
+                    self.RESULTS[language]['difficulty'].append(int(parsed_line[3]))
+
                 i+=1
-            self.consistent = [i for i, x in enumerate(difficulty) if x == 1]
-            self.inconsistent = [i for i, x in enumerate(difficulty) if x == 0]
+            print(self.RESULTS)
+            for language, values in self.RESULTS.items():
+                self.RESULTS[language]['consistent'] = [i for i, x in enumerate(self.RESULTS[language]['difficulty']) if x == 1]
+                self.RESULTS[language]['inconsistent'] = [i for i, x in enumerate(self.RESULTS[language]['difficulty']) if x == 0]
 
-            print(self.consistent)
-            print(self.inconsistent)
-            print(self.response_time)
+            print('english results')
+            print(self.RESULTS['0'])
+            print('spanish results')
+            print(self.RESULTS['1'])
 
-    def analyze_data(self):
-        response_time=np.array(self.response_time)
+    def analyze_data(self, language):
+        print(f'Analyzing data for {self.RESULTS[language]["language"]}')
+        response_time=np.array(self.RESULTS[language]['response_time'])
         print(response_time)
         
-        self.muCongruentes=np.mean(response_time[self.consistent]);
-        self.muIncongruentes=np.mean(response_time[self.inconsistent]);
-        self.stdCongruentes=np.std(response_time[self.consistent]);
-        self.stdIncongruentes=np.std(response_time[self.inconsistent]);
+        self.RESULTS[language]['muCongruentes'] = np.mean(response_time[self.RESULTS[language]['consistent']]);
+        self.RESULTS[language]['muIncongruentes'] = np.mean(response_time[self.RESULTS[language]['inconsistent']]);
+        self.RESULTS[language]['stdCongruentes'] = np.std(response_time[self.RESULTS[language]['consistent']]);
+        self.RESULTS[language]['stdIncongruentes'] = np.std(response_time[self.RESULTS[language]['inconsistent']]);
 
-        print(self.muCongruentes)
-        print(self.muIncongruentes)
-        print(self.stdCongruentes)
-        print(self.stdIncongruentes)
+        print(f'Mean consistent {self.RESULTS[language]["muCongruentes"]}')
+        print(f'Std consistent {self.RESULTS[language]["stdCongruentes"]}')
+        print(f'Mean inconsistent {self.RESULTS[language]["muIncongruentes"]}')
+        print(f'Std inconsistent{self.RESULTS[language]["stdIncongruentes"]}')
 
-    def is_significant(self):
-        response_time = np.array(self.response_time)
-        test=stats.ttest_ind(response_time[self.consistent], 
-                             response_time[self.inconsistent]);
-        print(test)
+    def is_significant(self, language):
+        response_time = np.array(self.RESULTS[language]['response_time'])
+        test=stats.ttest_ind(response_time[self.RESULTS[language]['consistent']], 
+                             response_time[self.RESULTS[language]['inconsistent']]);
+
+        print(f'Is significant for language {language}: {test}')
         
         return(test)
     
-    def plot_cons_incons(self):
+    def plot_cons_incons(self, language):
         n_groups = 2
 
-        test = self.is_significant()
+        test = self.is_significant(language)
 
         fig, ax = plt.subplots()
 
-        rects1 = ax.bar(1, self.muCongruentes, 0.3,
+        rects1 = ax.bar(1, self.RESULTS[language]["muCongruentes"], 0.3,
                         alpha=0.4, color='b',
-                        yerr=self.stdCongruentes/np.sqrt(len(self.consistent)),
-                        label='Congruentes')
+                        yerr=self.RESULTS[language]['stdCongruentes']/np.sqrt(len(self.RESULTS[language]['consistent'])),
+                        label=f'Congruentes [{self.RESULTS[language]["language"]}]')
 
-        rects2 = ax.bar(1 + 0.35, self.muIncongruentes, 0.3,
+        rects2 = ax.bar(1 + 0.35, self.RESULTS[language]["muIncongruentes"], 0.3,
                         alpha=0.4, color='r',
-                        yerr=self.stdIncongruentes/np.sqrt(len(self.inconsistent)),
-                        label='Incongruentes')
+                        yerr=self.RESULTS[language]['stdIncongruentes']/np.sqrt(len(self.RESULTS[language]['inconsistent'])),
+                        label=f'Incongruentes [{self.RESULTS[language]["language"]}]')
 
-        plt.ylim([600,1200])
+        plt.ylim([600,1600])
         plt.xticks([1,1.35], ('1', '2'))
-        ax.set_ylabel('RT')
+        ax.set_ylabel('Response Time')
         ax.set_title('P='+str(test[1]))
         ax.legend(loc='upper left')
         plt.show() 
 
 
+
 if __name__ == "__main__":
     informe = DataAnalysis()
-    print(informe.get_list_files())
-    informe.read_file(informe.get_list_files()[0])
-    informe.get_difficulty()
-    informe.analyze_data()
-    informe.is_significant()
-    informe.plot_cons_incons()
+    for filename in informe.get_list_files():
+        print(f'Solving analysis for file: {filename}')
+        informe.read_file(filename)
+        informe.get_difficulty()
+        for language in informe.LANGUAGES:
+            informe.analyze_data(str(language))
+            informe.is_significant(str(language))
+            informe.plot_cons_incons(str(language))
