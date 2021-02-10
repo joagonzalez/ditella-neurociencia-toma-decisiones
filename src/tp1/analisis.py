@@ -27,8 +27,13 @@ class DataAnalysis:
     def __init__(self):
         self.read_list_files()
 
+
     def get_results(self):
-        pass
+        '''
+        Getter for results
+        '''
+        return self.RESULTS
+
 
     def read_file(self, filename, directory=None):
         '''
@@ -44,15 +49,16 @@ class DataAnalysis:
             print(f'Error opening file {filename}!')
             print(f'Error: {str(e)}')
 
+
     def read_list_files(self, directory=None):
         '''
         Read list of files from data directory
         '''
-
         if directory == None:
             directory = self.DIR
 
         self.FILES = [f for f in listdir(directory) if isfile(join(directory, f))]
+
 
     def create_result_structure(self, filename, language):
         '''
@@ -80,11 +86,18 @@ class DataAnalysis:
         self.RESULTS[filename][language]['stdCongruentes'] = 0
         self.RESULTS[filename][language]['stdIncongruentes'] = 0
 
+
     def get_list_files(self):
+        '''
+        Getter for files list
+        '''
         return self.FILES
 
-    def get_difficulty(self, filename):
 
+    def get_difficulty(self, filename):
+        '''
+        Read a file and collects required data
+        '''
         tabla = open(self.DIR + filename)
         i=0
         while i < self.TRIALS: 
@@ -117,6 +130,7 @@ class DataAnalysis:
         # print('spanish results')
         # print(self.RESULTS[filename]['1'])
 
+
     def analyze_data(self, filename, language):
         print(f'Analyzing data for {self.RESULTS[filename][language]["language"]}')
         response_time=np.array(self.RESULTS[filename][language]['response_time'])
@@ -132,6 +146,7 @@ class DataAnalysis:
         print(f'Mean inconsistent {self.RESULTS[filename][language]["muIncongruentes"]}')
         print(f'Std inconsistent {self.RESULTS[filename][language]["stdIncongruentes"]}')
 
+
     def is_significant(self, filename, language):
         response_time = np.array(self.RESULTS[filename][language]['response_time'])
         test=stats.ttest_ind(response_time[self.RESULTS[filename][language]['consistent']], 
@@ -140,7 +155,8 @@ class DataAnalysis:
         print(f'Is significant for language {language}: {test}')
         
         return(test)
-    
+
+
     def plot_cons_incons(self, filename, language):
         n_groups = 2
 
@@ -166,7 +182,6 @@ class DataAnalysis:
         plt.show() 
 
 
-
 if __name__ == "__main__":
     informe = DataAnalysis()
     print(informe.get_list_files())
@@ -178,4 +193,4 @@ if __name__ == "__main__":
             informe.analyze_data(filename, language)
             informe.is_significant(filename, language)
             informe.plot_cons_incons(filename, language)
-    print(informe.RESULTS)
+    print(informe.get_results())
