@@ -29,35 +29,35 @@ fonts
 # table: write condition,stimulus,response
 
 table stroop
-  "red green      0 0" redgreen      2
-  "red blue       0 0" redblue       3
+  "red green      0 0" redgreen      3
+  "red blue       0 0" redblue       2
   "red red        1 0" redred        1
   "red red        1 0" redred        1
   "green red      0 0" greenred      1
-  "green blue     0 0" greenblue     3
-  "green green    1 0" greengreen    2
-  "green green    1 0" greengreen    2
-  "blue green     0 0" bluegreen     2
+  "green blue     0 0" greenblue     2
+  "green green    1 0" greengreen    3
+  "green green    1 0" greengreen    3
+  "blue green     0 0" bluegreen     3
   "blue red       0 0" bluered       1
-  "blue blue      1 0" blueblue      3
-  "blue blue      1 0" blueblue      3
-  "rojo verde     0 1" rojoverde     5
-  "rojo azul      0 1" rojoazul      4
+  "blue blue      1 0" blueblue      2
+  "blue blue      1 0" blueblue      2
+  "rojo verde     0 1" rojoverde     3
+  "rojo azul      0 1" rojoazul      2
   "rojo rojo      1 1" rojorojo      1
   "rojo rojo      1 1" rojorojo      1
   "verde rojo     0 1" verderojo     1
-  "verde azul     0 1" verdeazul     4
-  "verde verde    1 1" verdeverde    5
-  "verde verde    1 1" verdeverde    5
-  "azul verde     0 1" azulverde     5
+  "verde azul     0 1" verdeazul     2
+  "verde verde    1 1" verdeverde    3
+  "verde verde    1 1" verdeverde    3
+  "azul verde     0 1" azulverde     3
   "azul rojo      0 1" azulrojo      1
-  "azul azul      1 1" azulazul      4
-  "azul azul      1 1" azulazul      4
+  "azul azul      1 1" azulazul      2
+  "azul azul      1 1" azulazul      2
 
 
 task stroop
   table stroop
-  keys r g b a v
+  keys r a v
   delay 500
   show bitmap fixpoint # stimulus 1
   delay 200
@@ -82,7 +82,7 @@ message instruction2
 
 block training
   tasklist
-    stroop 3  # run the stroop task 40 trials.
+    stroop 96 all_before_repeat # run the stroop task 96 trials.
   end
   feedback
     text -100 -50  "Your speed in correct trials in English / Spanish"
