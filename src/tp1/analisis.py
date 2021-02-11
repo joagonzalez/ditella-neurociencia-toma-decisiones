@@ -134,17 +134,20 @@ class DataAnalysis:
     def analyze_data(self, filename, language):
         print(f'Analyzing data for {self.RESULTS[filename][language]["language"]}')
         response_time=np.array(self.RESULTS[filename][language]['response_time'])
-        print(response_time)
+        # print(response_time)
         
         self.RESULTS[filename][language]['muCongruentes'] = np.mean(response_time[self.RESULTS[filename][language]['consistent']]);
         self.RESULTS[filename][language]['muIncongruentes'] = np.mean(response_time[self.RESULTS[filename][language]['inconsistent']]);
         self.RESULTS[filename][language]['stdCongruentes'] = np.std(response_time[self.RESULTS[filename][language]['consistent']]);
         self.RESULTS[filename][language]['stdIncongruentes'] = np.std(response_time[self.RESULTS[filename][language]['inconsistent']]);
 
+        stroopEffect = self.RESULTS[filename][language]["muIncongruentes"] - self.RESULTS[filename][language]["muCongruentes"]
+        
         print(f'Mean consistent {self.RESULTS[filename][language]["muCongruentes"]}')
         print(f'Std consistent {self.RESULTS[filename][language]["stdCongruentes"]}')
         print(f'Mean inconsistent {self.RESULTS[filename][language]["muIncongruentes"]}')
         print(f'Std inconsistent {self.RESULTS[filename][language]["stdIncongruentes"]}')
+        print(f'Stroop effect {stroopEffect}')
 
 
     def is_significant(self, filename, language):
@@ -193,4 +196,5 @@ if __name__ == "__main__":
             informe.analyze_data(filename, language)
             informe.is_significant(filename, language)
             informe.plot_cons_incons(filename, language)
-    print(informe.get_results())
+    # Para debug
+    # print(informe.get_results())
