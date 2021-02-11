@@ -1,13 +1,6 @@
 # ditella-neurociencia-toma-decisiones
 Repositorio con ejercicios y trabajos de la materia Neurociencia y Toma de Decisiones de la maestría Di Tella MiM+analytics 
 
-# Ejecutar análisis
-```
-ditella-neurociencia-toma-decisiones$ pip install -r requirements.txt
-
-ditella-neurociencia-toma-decisiones/src/tp1$ python analisis.py
-```
-
 ### Organización
 ```
 ~/$ tree -d
@@ -24,4 +17,10 @@ ditella-neurociencia-toma-decisiones/src/tp1$ python analisis.py
     |── tp2
     └── tpN
 11 directories
+```
+# Ejecutar análisis TP1
+```
+ditella-neurociencia-toma-decisiones$ pip install -r requirements.txt
+
+ditella-neurociencia-toma-decisiones/src/tp1$ python analisis.py
 ```
