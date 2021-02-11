@@ -1,0 +1,698 @@
+(ditella-neurociencia-toma-decisiones) jgonzalez@cerealkiller:~/dev/ditella-neurociencia-toma-decisiones/src/tp1(development)$ python analisis.py 
+['StroopTest.2021-02-11-1529.data.ee213ee3-b63d-453d-8667-906f191f482a.txt', 'StroopTest.2021-02-11-1437.data.1eb51f5f-024a-4882-8a75-5341fe49f4bb.txt', 'StroopTest.2021-02-11-0401.data.c6f03d5a-b39c-481f-9c39-18b5ee8604e5.txt', 'StroopTest.2021-02-11-0420.data.b1eaedfa-7146-4c16-82e9-b33467a5391c.txt', 'StroopTest.2021-02-11-2010.data.adc4de35-9be2-411f-b455-5e7b9661db8e.txt', 'StroopTest.2021-02-11-1456.data.170268f7-053e-478c-92da-c2de1dd74ccc.txt']
+Solving analysis for file: StroopTest.2021-02-11-1529.data.ee213ee3-b63d-453d-8667-906f191f482a.txt
+training red red        1 0 4 1 3 2000
+training red blue       0 0 2 2 1 1248
+training blue blue      1 0 11 2 1 1117
+training rojo azul      0 1 14 2 1 822
+training blue red       0 0 10 1 1 1421
+training green green    1 0 8 3 1 1338
+training red red        1 0 3 1 1 1245
+training rojo rojo      1 1 15 1 1 1054
+training green red      0 0 5 1 1 856
+training verde rojo     0 1 17 1 1 844
+training verde azul     0 1 18 2 1 1093
+training verde verde    1 1 19 3 1 1221
+training azul azul      1 1 24 2 1 1153
+training azul verde     0 1 21 3 1 1291
+training blue blue      1 0 12 2 1 952
+training rojo rojo      1 1 16 1 1 1022
+training green blue     0 0 6 2 1 1047
+training red green      0 0 1 3 1 974
+training verde verde    1 1 20 3 1 987
+training green green    1 0 7 3 1 741
+training azul rojo      0 1 22 1 1 1271
+training rojo verde     0 1 13 3 1 946
+training azul azul      1 1 23 2 1 1268
+training blue green     0 0 9 3 1 878
+training rojo azul      0 1 14 2 1 1567
+training azul azul      1 1 23 2 1 697
+training green green    1 0 8 3 1 849
+training red red        1 0 4 1 1 1180
+training green blue     0 0 6 2 1 1091
+training blue green     0 0 9 3 1 899
+training verde verde    1 1 19 3 1 708
+training red green      0 0 1 3 1 625
+training green red      0 0 5 1 1 1295
+training verde azul     0 1 18 2 1 941
+training green green    1 0 7 3 1 945
+training blue red       0 0 10 1 1 1163
+training azul rojo      0 1 22 1 1 996
+training rojo verde     0 1 13 3 1 1065
+training azul azul      1 1 24 2 1 886
+training red red        1 0 3 1 1 1240
+training azul verde     0 1 21 3 1 813
+training verde verde    1 1 20 3 1 778
+training blue blue      1 0 12 2 1 878
+training verde rojo     0 1 17 1 1 1061
+training rojo rojo      1 1 16 1 1 927
+training rojo rojo      1 1 15 1 1 798
+training red blue       0 0 2 2 1 813
+training blue blue      1 0 11 2 1 903
+training red green      0 0 1 3 1 930
+training blue red       0 0 10 1 1 1310
+training red red        1 0 3 1 1 832
+training blue blue      1 0 12 2 1 854
+training verde verde    1 1 19 3 1 985
+training azul azul      1 1 24 2 1 971
+training red blue       0 0 2 2 1 923
+training rojo rojo      1 1 16 1 1 1413
+training verde verde    1 1 20 3 1 829
+training green blue     0 0 6 2 1 850
+training azul azul      1 1 23 2 1 666
+training green red      0 0 5 1 1 998
+training rojo verde     0 1 13 3 1 943
+training blue blue      1 0 11 2 1 854
+training verde azul     0 1 18 2 1 913
+training green green    1 0 8 3 1 831
+training rojo azul      0 1 14 2 1 896
+training green green    1 0 7 3 1 797
+training rojo rojo      1 1 15 1 1 910
+training red red        1 0 4 1 1 974
+training azul verde     0 1 21 3 1 793
+training blue green     0 0 9 3 1 801
+training azul rojo      0 1 22 1 1 1423
+training verde rojo     0 1 17 3 2 942
+training green red      0 0 5 1 1 1146
+training red red        1 0 3 1 1 922
+training blue red       0 0 10 1 1 879
+training rojo rojo      1 1 16 1 1 832
+training verde rojo     0 1 17 1 1 928
+training verde verde    1 1 20 3 1 955
+training red blue       0 0 2 2 1 1143
+training azul azul      1 1 23 2 1 955
+training azul verde     0 1 21 3 1 1214
+training green blue     0 0 6 2 1 952
+training blue blue      1 0 12 2 1 1036
+training blue green     0 0 9 3 1 989
+training verde azul     0 1 18 2 1 1564
+training azul azul      1 1 24 2 1 871
+training rojo rojo      1 1 15 1 1 995
+training blue blue      1 0 11 2 1 863
+training azul rojo      0 1 22 1 1 994
+training verde verde    1 1 19 3 1 972
+training green green    1 0 7 3 1 587
+training rojo verde     0 1 13 3 1 626
+training red red        1 0 4 1 1 861
+training green green    1 0 8 3 1 1008
+training red green      0 0 1 3 1 604
+training rojo azul      0 1 14 2 1 910
+
+Creating data structure for StroopTest.2021-02-11-1529.data.ee213ee3-b63d-453d-8667-906f191f482a.txt-0
+Creating data structure for StroopTest.2021-02-11-1529.data.ee213ee3-b63d-453d-8667-906f191f482a.txt-1
+Analyzing data for ingles
+Mean consistent 948.1304347826087
+Std consistent 173.57952803249833
+Mean inconsistent 993.125
+Std inconsistent 200.8800040861874
+Stroop effect 44.994565217391255
+Is significant for language 0: Ttest_indResult(statistic=-0.8024959802918625, pvalue=0.42648416708791737)
+Is significant for language 0: Ttest_indResult(statistic=-0.8024959802918625, pvalue=0.42648416708791737)
+Analyzing data for español
+Mean consistent 952.2083333333334
+Std consistent 176.60784692992047
+Mean inconsistent 1039.7391304347825
+Std inconsistent 239.36387025165797
+Stroop effect 87.53079710144914
+Is significant for language 1: Ttest_indResult(statistic=-1.3998623922880835, pvalue=0.1684112122761539)
+Is significant for language 1: Ttest_indResult(statistic=-1.3998623922880835, pvalue=0.1684112122761539)
+Solving analysis for file: StroopTest.2021-02-11-1437.data.1eb51f5f-024a-4882-8a75-5341fe49f4bb.txt
+training azul azul      1 1 23 2 1 672
+training blue red       0 0 10 1 1 809
+training blue blue      1 0 12 2 1 864
+training blue green     0 0 9 3 1 993
+training azul azul      1 1 24 2 1 811
+training red green      0 0 1 3 1 979
+training red red        1 0 4 1 1 902
+training azul verde     0 1 21 3 1 1144
+training azul rojo      0 1 22 1 1 902
+training verde verde    1 1 20 3 1 805
+training green green    1 0 7 3 1 495
+training blue blue      1 0 11 2 1 594
+training verde verde    1 1 19 3 1 835
+training green blue     0 0 6 2 1 828
+training rojo rojo      1 1 15 1 1 900
+training green red      0 0 5 1 1 983
+training green green    1 0 8 3 1 790
+training red red        1 0 3 1 1 681
+training verde rojo     0 1 17 1 1 593
+training rojo azul      0 1 14 2 1 848
+training rojo rojo      1 1 16 1 1 616
+training verde azul     0 1 18 2 1 691
+training red blue       0 0 2 2 1 734
+training rojo verde     0 1 13 3 1 907
+training blue blue      1 0 12 2 1 696
+training blue red       0 0 10 1 1 691
+training verde rojo     0 1 17 1 1 683
+training green green    1 0 8 3 1 633
+training azul verde     0 1 21 3 1 866
+training azul azul      1 1 23 2 1 606
+training rojo rojo      1 1 16 1 1 571
+training green blue     0 0 6 2 1 638
+training rojo rojo      1 1 15 1 1 676
+training verde azul     0 1 18 2 1 658
+training rojo azul      0 1 14 2 1 713
+training red blue       0 0 2 2 1 579
+training verde verde    1 1 19 3 1 1072
+training red green      0 0 1 3 1 566
+training blue green     0 0 9 3 1 507
+training red red        1 0 3 1 1 493
+training azul rojo      0 1 22 1 1 541
+training rojo verde     0 1 13 3 1 736
+training verde verde    1 1 20 3 1 400
+training green green    1 0 7 3 1 387
+training red red        1 0 4 1 1 650
+training green red      0 0 5 1 1 416
+training azul azul      1 1 24 2 1 559
+training blue blue      1 0 11 2 1 441
+training verde verde    1 1 20 3 1 660
+training rojo rojo      1 1 16 1 1 576
+training blue blue      1 0 11 2 1 490
+training red red        1 0 4 1 1 655
+training blue red       0 0 10 1 1 854
+training green green    1 0 8 3 1 632
+training verde verde    1 1 19 3 1 594
+training verde rojo     0 1 17 1 1 675
+training blue blue      1 0 12 2 1 591
+training blue green     0 0 9 3 1 675
+training azul azul      1 1 23 2 1 615
+training red green      0 0 1 3 1 823
+training rojo azul      0 1 14 2 1 1171
+training red blue       0 0 2 2 1 529
+training azul rojo      0 1 22 1 1 933
+training green blue     0 0 6 3 2 582
+training green green    1 0 7 3 1 1152
+training verde azul     0 1 18 2 1 1236
+training rojo rojo      1 1 15 1 1 631
+training red red        1 0 3 1 1 613
+training rojo verde     0 1 13 3 1 948
+training azul verde     0 1 21 3 1 1010
+training green red      0 0 5 1 1 860
+training azul azul      1 1 24 2 1 671
+training red blue       0 0 2 2 1 515
+training red red        1 0 4 1 1 618
+training rojo rojo      1 1 16 1 1 500
+training azul rojo      0 1 22 1 1 592
+training rojo rojo      1 1 15 1 1 551
+training rojo azul      0 1 14 2 1 726
+training green blue     0 0 6 2 1 659
+training verde rojo     0 1 17 1 1 674
+training blue blue      1 0 12 2 1 750
+training blue green     0 0 9 3 1 873
+training blue red       0 0 10 1 1 997
+training azul verde     0 1 21 2 2 647
+training rojo verde     0 1 13 3 1 948
+training azul azul      1 1 24 2 1 845
+training verde azul     0 1 18 2 1 1020
+training verde verde    1 1 20 3 1 855
+training red red        1 0 3 1 1 593
+training red green      0 0 1 3 1 970
+training verde verde    1 1 19 3 1 530
+training green green    1 0 7 3 1 584
+training green red      0 0 5 2 2 594
+training green green    1 0 8 3 1 1055
+training azul azul      1 1 23 2 1 1107
+training blue blue      1 0 11 2 1 651
+
+Creating data structure for StroopTest.2021-02-11-1437.data.1eb51f5f-024a-4882-8a75-5341fe49f4bb.txt-1
+Creating data structure for StroopTest.2021-02-11-1437.data.1eb51f5f-024a-4882-8a75-5341fe49f4bb.txt-0
+Analyzing data for español
+Mean consistent 694.0833333333334
+Std consistent 171.47981335681726
+Mean inconsistent 835.4347826086956
+Std inconsistent 191.9322403274829
+Stroop effect 141.35144927536226
+Is significant for language 1: Ttest_indResult(statistic=-2.6076013479986457, pvalue=0.012326828897435207)
+Is significant for language 1: Ttest_indResult(statistic=-2.6076013479986457, pvalue=0.012326828897435207)
+Analyzing data for ingles
+Mean consistent 667.0833333333334
+Std consistent 177.40958182190224
+Mean inconsistent 749.0
+Std inconsistent 177.8738061353917
+Stroop effect 81.91666666666663
+Is significant for language 0: Ttest_indResult(statistic=-1.5280484919637043, pvalue=0.13365815108382345)
+Is significant for language 0: Ttest_indResult(statistic=-1.5280484919637043, pvalue=0.13365815108382345)
+Solving analysis for file: StroopTest.2021-02-11-0401.data.c6f03d5a-b39c-481f-9c39-18b5ee8604e5.txt
+training azul verde     0 1 21 3 1 1223
+training red green      0 0 1 3 1 948
+training green blue     0 0 6 2 1 827
+training red red        1 0 4 1 1 644
+training azul rojo      0 1 22 1 1 947
+training blue red       0 0 10 1 1 842
+training rojo rojo      1 1 16 1 1 420
+training blue green     0 0 9 3 1 748
+training verde rojo     0 1 17 1 1 528
+training green red      0 0 5 1 1 702
+training green green    1 0 8 3 1 744
+training azul azul      1 1 23 2 1 519
+training rojo verde     0 1 13 3 1 682
+training red red        1 0 3 1 1 590
+training blue blue      1 0 12 2 1 668
+training green green    1 0 7 3 1 1037
+training rojo rojo      1 1 15 1 1 604
+training red blue       0 0 2 2 1 992
+training rojo azul      0 1 14 2 1 1131
+training verde verde    1 1 20 3 1 976
+training blue blue      1 0 11 2 1 608
+training verde verde    1 1 19 3 1 528
+training azul azul      1 1 24 2 1 692
+training verde azul     0 1 18 2 1 681
+training green blue     0 0 6 2 1 726
+training rojo rojo      1 1 15 1 1 473
+training verde verde    1 1 19 3 1 472
+training red blue       0 0 2 2 1 683
+training verde azul     0 1 18 2 1 566
+training blue green     0 0 9 3 1 619
+training blue red       0 0 10 1 1 452
+training verde verde    1 1 20 3 1 624
+training azul verde     0 1 21 3 1 595
+training rojo verde     0 1 13 3 1 830
+training azul azul      1 1 23 2 1 555
+training red red        1 0 3 1 1 394
+training azul azul      1 1 24 2 1 538
+training green red      0 0 5 1 1 684
+training verde rojo     0 1 17 1 1 619
+training green green    1 0 7 3 1 534
+training rojo rojo      1 1 16 1 1 530
+training red red        1 0 4 1 1 411
+training blue blue      1 0 11 2 1 614
+training azul rojo      0 1 22 2 2 466
+training rojo azul      0 1 14 2 1 669
+training red green      0 0 1 3 1 1379
+training green green    1 0 8 3 1 544
+training blue blue      1 0 12 2 1 567
+training verde azul     0 1 18 3 2 654
+training blue blue      1 0 11 2 1 521
+training rojo rojo      1 1 16 1 1 496
+training verde verde    1 1 20 3 1 453
+training rojo verde     0 1 13 3 1 549
+training verde verde    1 1 19 3 1 510
+training red red        1 0 3 1 1 772
+training blue blue      1 0 12 2 1 402
+training green blue     0 0 6 2 1 569
+training green green    1 0 8 3 1 607
+training red red        1 0 4 1 1 608
+training azul azul      1 1 24 2 1 490
+training blue red       0 0 10 1 1 1405
+training azul azul      1 1 23 2 1 465
+training green green    1 0 7 3 1 690
+training blue green     0 0 9 3 1 1001
+training azul rojo      0 1 22 1 1 973
+training red blue       0 0 2 2 1 705
+training rojo azul      0 1 14 2 1 642
+training red green      0 0 1 3 1 678
+training verde rojo     0 1 17 1 1 694
+training green red      0 0 5 1 1 547
+training azul verde     0 1 21 3 1 639
+training rojo rojo      1 1 15 1 1 536
+training verde verde    1 1 19 3 1 631
+training azul rojo      0 1 22 2 2 581
+training azul azul      1 1 23 2 1 383
+training azul verde     0 1 21 3 1 556
+training blue red       0 0 10 1 1 456
+training rojo azul      0 1 14 2 1 399
+training verde rojo     0 1 17 1 1 662
+training green green    1 0 7 3 1 465
+training red green      0 0 1 3 1 553
+training verde azul     0 1 18 2 1 391
+training rojo rojo      1 1 15 1 1 421
+training azul azul      1 1 24 2 1 339
+training rojo verde     0 1 13 1 2 437
+training red red        1 0 4 1 1 537
+training blue blue      1 0 11 2 1 373
+training red blue       0 0 2 2 1 723
+training green green    1 0 8 3 1 688
+training green blue     0 0 6 2 1 552
+training red red        1 0 3 1 1 518
+training blue blue      1 0 12 3 2 704
+training green red      0 0 5 1 1 565
+training blue green     0 0 9 3 1 1130
+training verde verde    1 1 20 3 1 501
+training rojo rojo      1 1 16 1 1 692
+
+Creating data structure for StroopTest.2021-02-11-0401.data.c6f03d5a-b39c-481f-9c39-18b5ee8604e5.txt-1
+Creating data structure for StroopTest.2021-02-11-0401.data.c6f03d5a-b39c-481f-9c39-18b5ee8604e5.txt-0
+Analyzing data for español
+Mean consistent 535.3333333333334
+Std consistent 125.65152428663791
+Mean inconsistent 698.8
+Std inconsistent 214.08587062204737
+Stroop effect 163.46666666666658
+Is significant for language 1: Ttest_indResult(statistic=-3.074092498248992, pvalue=0.0037021743163577025)
+Is significant for language 1: Ttest_indResult(statistic=-3.074092498248992, pvalue=0.0037021743163577025)
+Analyzing data for ingles
+Mean consistent 588.5217391304348
+Std consistent 143.52181157223254
+Mean inconsistent 770.25
+Std inconsistent 252.7072169527416
+Stroop effect 181.72826086956525
+Is significant for language 0: Ttest_indResult(statistic=-2.9494261158680497, pvalue=0.005036012693440034)
+Is significant for language 0: Ttest_indResult(statistic=-2.9494261158680497, pvalue=0.005036012693440034)
+Solving analysis for file: StroopTest.2021-02-11-0420.data.b1eaedfa-7146-4c16-82e9-b33467a5391c.txt
+training azul azul      1 1 24 2 1 1057
+training green blue     0 0 6 2 1 1036
+training verde azul     0 1 18 2 1 873
+training blue blue      1 0 12 2 1 589
+training red red        1 0 3 1 1 506
+training verde verde    1 1 19 3 1 1576
+training blue green     0 0 9 3 1 573
+training rojo azul      0 1 14 2 1 972
+training azul verde     0 1 21 3 1 770
+training blue blue      1 0 11 3 2 619
+training rojo rojo      1 1 15 1 1 552
+training red blue       0 0 2 2 1 1269
+training verde verde    1 1 20 3 1 582
+training azul rojo      0 1 22 1 1 778
+training rojo verde     0 1 13 3 1 961
+training red green      0 0 1 3 1 669
+training red red        1 0 4 1 1 594
+training verde rojo     0 1 17 3 2 461
+training green green    1 0 7 3 1 497
+training green red      0 0 5 1 1 514
+training green green    1 0 8 3 1 565
+training rojo rojo      1 1 16 1 1 393
+training azul azul      1 1 23 2 1 538
+training blue red       0 0 10 1 1 705
+training azul azul      1 1 24 2 1 863
+training rojo rojo      1 1 16 1 1 572
+training rojo azul      0 1 14 2 1 701
+training blue blue      1 0 11 2 1 500
+training red green      0 0 1 3 1 560
+training verde verde    1 1 19 3 1 384
+training red blue       0 0 2 1 2 521
+training azul azul      1 1 23 2 1 499
+training blue green     0 0 9 3 1 1080
+training green red      0 0 5 1 1 660
+training verde rojo     0 1 17 1 1 593
+training red red        1 0 4 1 1 446
+training azul verde     0 1 21 1 2 278
+training green blue     0 0 6 2 1 972
+training green green    1 0 7 3 1 341
+training rojo verde     0 1 13 3 1 515
+training blue blue      1 0 12 2 1 467
+training green green    1 0 8 3 1 678
+training azul rojo      0 1 22 1 1 875
+training red red        1 0 3 1 1 1740
+training blue red       0 0 10 1 1 794
+training verde azul     0 1 18 2 1 1423
+training rojo rojo      1 1 15 1 1 597
+training verde verde    1 1 20 3 1 538
+training blue green     0 0 9 3 1 506
+training red red        1 0 3 1 1 562
+training green green    1 0 7 3 1 594
+training verde verde    1 1 20 3 1 463
+training green blue     0 0 6 2 1 659
+training azul rojo      0 1 22 1 1 724
+training red blue       0 0 2 2 1 744
+training rojo rojo      1 1 15 1 1 790
+training blue blue      1 0 11 2 1 557
+training verde verde    1 1 19 3 1 697
+training rojo azul      0 1 14 2 1 828
+training azul azul      1 1 24 2 1 807
+training verde azul     0 1 18 2 1 815
+training azul verde     0 1 21 3 1 1428
+training azul azul      1 1 23 2 1 847
+training blue red       0 0 10 1 1 655
+training red red        1 0 4 1 1 444
+training red green      0 0 1 3 1 576
+training green red      0 0 5 1 1 1108
+training blue blue      1 0 12 3 2 551
+training verde rojo     0 1 17 1 1 1131
+training green green    1 0 8 3 1 808
+training rojo rojo      1 1 16 1 1 861
+training rojo verde     0 1 13 3 1 551
+training verde azul     0 1 18 2 1 422
+training azul rojo      0 1 22 1 1 609
+training red red        1 0 4 1 1 670
+training blue red       0 0 10 1 1 615
+training blue blue      1 0 12 2 1 551
+training green green    1 0 7 3 1 481
+training red blue       0 0 2 2 1 717
+training rojo rojo      1 1 15 1 1 652
+training red green      0 0 1 3 1 1018
+training rojo verde     0 1 13 3 1 627
+training azul azul      1 1 24 2 1 825
+training verde rojo     0 1 17 1 1 1118
+training verde verde    1 1 19 3 1 650
+training green blue     0 0 6 2 1 713
+training rojo rojo      1 1 16 1 1 456
+training verde verde    1 1 20 3 1 534
+training rojo azul      0 1 14 2 1 593
+training red red        1 0 3 1 1 558
+training blue blue      1 0 11 2 1 452
+training green red      0 0 5 1 1 665
+training azul azul      1 1 23 2 1 564
+training blue green     0 0 9 3 1 857
+training green green    1 0 8 3 1 964
+training azul verde     0 1 21 1 2 1139
+
+Creating data structure for StroopTest.2021-02-11-0420.data.b1eaedfa-7146-4c16-82e9-b33467a5391c.txt-1
+Creating data structure for StroopTest.2021-02-11-0420.data.b1eaedfa-7146-4c16-82e9-b33467a5391c.txt-0
+Analyzing data for español
+Mean consistent 679.0416666666666
+Std consistent 250.8270451869619
+Mean inconsistent 824.1428571428571
+Std inconsistent 267.5821699722813
+Stroop effect 145.10119047619048
+Is significant for language 1: Ttest_indResult(statistic=-1.8343209915615115, pvalue=0.07353184582163523)
+Is significant for language 1: Ttest_indResult(statistic=-1.8343209915615115, pvalue=0.07353184582163523)
+Analyzing data for ingles
+Mean consistent 616.5454545454545
+Std consistent 276.95827176222895
+Mean inconsistent 768.0434782608696
+Std inconsistent 207.4795910887056
+Stroop effect 151.49802371541512
+Is significant for language 0: Ttest_indResult(statistic=-2.0357996863160186, pvalue=0.04796139595941198)
+Is significant for language 0: Ttest_indResult(statistic=-2.0357996863160186, pvalue=0.04796139595941198)
+Solving analysis for file: StroopTest.2021-02-11-2010.data.adc4de35-9be2-411f-b455-5e7b9661db8e.txt
+training red red        1 0 4 1 3 2000
+training blue red       0 0 10 1 1 288
+training azul azul      1 1 24 2 1 883
+training azul azul      1 1 23 2 1 701
+training green blue     0 0 6 1 3 2000
+training rojo rojo      1 1 15 1 1 1486
+training rojo verde     0 1 13 1 2 1086
+training rojo rojo      1 1 16 3 2 573
+training red blue       0 0 2 2 1 1286
+training green red      0 0 5 3 2 1354
+training red green      0 0 1 1 2 1491
+training blue blue      1 0 12 2 1 1852
+training red red        1 0 3 1 3 2000
+training verde verde    1 1 20 3 1 1331
+training rojo azul      0 1 14 2 1 966
+training blue blue      1 0 11 2 1 1296
+training green green    1 0 8 3 1 1076
+training blue green     0 0 9 3 1 1031
+training green green    1 0 7 3 1 929
+training verde azul     0 1 18 2 1 1033
+training verde verde    1 1 19 3 1 1000
+training verde rojo     0 1 17 1 1 1072
+training azul rojo      0 1 22 2 2 1592
+training azul verde     0 1 21 3 1 1441
+training red red        1 0 3 1 1 1335
+training green green    1 0 8 1 3 2000
+training rojo rojo      1 1 15 1 1 1284
+training red green      0 0 1 3 1 1716
+training blue green     0 0 9 3 1 1582
+training rojo azul      0 1 14 2 1 960
+training azul azul      1 1 23 2 1 603
+training azul verde     0 1 21 3 1 1164
+training blue blue      1 0 11 2 1 1008
+training red blue       0 0 2 2 1 1430
+training azul azul      1 1 24 2 1 1075
+training verde verde    1 1 19 3 1 441
+training green blue     0 0 6 2 1 439
+training green green    1 0 7 3 1 558
+training azul rojo      0 1 22 1 1 485
+training blue blue      1 0 12 2 1 1025
+training verde rojo     0 1 17 1 1 494
+training rojo verde     0 1 13 2 2 1015
+training verde verde    1 1 20 3 1 669
+training blue red       0 0 10 1 1 835
+training green red      0 0 5 1 1 606
+training rojo rojo      1 1 16 1 1 462
+training verde azul     0 1 18 2 1 1120
+training red red        1 0 4 1 1 1234
+training blue blue      1 0 11 2 1 732
+training red green      0 0 1 1 2 1300
+training red red        1 0 3 1 1 846
+training green green    1 0 8 3 1 883
+training blue blue      1 0 12 2 1 984
+training verde verde    1 1 20 3 1 1006
+training azul rojo      0 1 22 2 2 1002
+training blue red       0 0 10 3 2 1296
+training red blue       0 0 2 1 2 435
+training rojo rojo      1 1 15 1 1 1158
+training red red        1 0 4 1 1 640
+training rojo verde     0 1 13 3 1 776
+training rojo azul      0 1 14 2 1 696
+training verde rojo     0 1 17 1 1 1250
+training verde verde    1 1 19 2 2 1112
+training azul azul      1 1 24 3 2 504
+training azul azul      1 1 23 2 1 863
+training green red      0 0 5 1 1 1338
+training green green    1 0 7 3 1 795
+training rojo rojo      1 1 16 1 1 869
+training azul verde     0 1 21 3 1 1263
+training blue green     0 0 9 3 1 1033
+training verde azul     0 1 18 2 1 1142
+training green blue     0 0 6 2 1 611
+training rojo verde     0 1 13 3 1 1186
+training blue blue      1 0 11 2 1 574
+training red red        1 0 4 1 1 1398
+training azul verde     0 1 21 3 1 1370
+training green red      0 0 5 1 1 1239
+training azul azul      1 1 23 2 1 1181
+training verde rojo     0 1 17 3 2 790
+training blue red       0 0 10 1 1 402
+training verde azul     0 1 18 2 1 796
+training green blue     0 0 6 2 1 986
+training rojo rojo      1 1 16 1 1 1007
+training rojo azul      0 1 14 2 1 1012
+training green green    1 0 8 3 1 751
+training green green    1 0 7 3 1 629
+training red red        1 0 3 1 1 676
+training rojo rojo      1 1 15 1 1 744
+training verde verde    1 1 19 3 1 517
+training blue green     0 0 9 3 1 729
+training verde verde    1 1 20 3 1 453
+training azul rojo      0 1 22 1 1 1090
+training blue blue      1 0 12 2 1 770
+training red blue       0 0 2 2 1 873
+training azul azul      1 1 24 2 1 587
+training red green      0 0 1 3 1 1283
+
+Creating data structure for StroopTest.2021-02-11-2010.data.adc4de35-9be2-411f-b455-5e7b9661db8e.txt-0
+Creating data structure for StroopTest.2021-02-11-2010.data.adc4de35-9be2-411f-b455-5e7b9661db8e.txt-1
+Analyzing data for ingles
+Mean consistent 951.952380952381
+Std consistent 317.5350713574016
+Mean inconsistent 983.7222222222222
+Std inconsistent 406.1764539315334
+Stroop effect 31.76984126984121
+Is significant for language 0: Ttest_indResult(statistic=-0.26674574512965366, pvalue=0.7911460133943251)
+Is significant for language 0: Ttest_indResult(statistic=-0.26674574512965366, pvalue=0.7911460133943251)
+Analyzing data for español
+Mean consistent 872.3809523809524
+Std consistent 302.7294055266543
+Mean inconsistent 1016.6315789473684
+Std inconsistent 259.20855462782043
+Stroop effect 144.25062656641603
+Is significant for language 1: Ttest_indResult(statistic=-1.5696891889603697, pvalue=0.1247779630441152)
+Is significant for language 1: Ttest_indResult(statistic=-1.5696891889603697, pvalue=0.1247779630441152)
+Solving analysis for file: StroopTest.2021-02-11-1456.data.170268f7-053e-478c-92da-c2de1dd74ccc.txt
+training azul azul      1 1 24 1 3 2000
+training red red        1 0 4 1 1 1976
+training rojo rojo      1 1 16 1 1 1203
+training green red      0 0 5 1 1 1140
+training verde verde    1 1 19 3 1 977
+training green green    1 0 8 3 1 635
+training verde rojo     0 1 17 1 1 1479
+training rojo verde     0 1 13 3 1 999
+training blue green     0 0 9 3 1 1104
+training green green    1 0 7 3 1 681
+training rojo rojo      1 1 15 1 1 959
+training verde verde    1 1 20 3 1 949
+training azul azul      1 1 23 2 1 728
+training red red        1 0 3 1 1 1092
+training azul verde     0 1 21 3 1 1184
+training green blue     0 0 6 2 1 897
+training verde azul     0 1 18 2 1 672
+training red green      0 0 1 3 1 874
+training blue blue      1 0 11 2 1 1519
+training rojo azul      0 1 14 2 1 972
+training blue blue      1 0 12 2 1 560
+training red blue       0 0 2 2 1 816
+training blue red       0 0 10 1 1 728
+training azul rojo      0 1 22 1 1 741
+training rojo azul      0 1 14 2 1 673
+training green green    1 0 8 3 1 708
+training red green      0 0 1 3 1 762
+training red red        1 0 4 1 1 1288
+training rojo verde     0 1 13 3 1 869
+training verde azul     0 1 18 2 1 669
+training azul azul      1 1 24 2 1 562
+training green green    1 0 7 3 1 668
+training green blue     0 0 6 2 1 820
+training red red        1 0 3 1 1 486
+training verde verde    1 1 19 3 1 597
+training blue red       0 0 10 3 2 710
+training verde rojo     0 1 17 1 1 896
+training red blue       0 0 2 2 1 806
+training azul verde     0 1 21 3 1 1132
+training blue green     0 0 9 3 1 812
+training azul azul      1 1 23 2 1 652
+training azul rojo      0 1 22 1 1 536
+training blue blue      1 0 11 2 1 900
+training rojo rojo      1 1 16 1 1 787
+training green red      0 0 5 1 1 677
+training rojo rojo      1 1 15 1 1 575
+training verde verde    1 1 20 3 1 573
+training blue blue      1 0 12 2 1 560
+training green blue     0 0 6 2 1 750
+training rojo azul      0 1 14 2 1 563
+training verde verde    1 1 19 3 1 980
+training verde azul     0 1 18 2 1 732
+training azul verde     0 1 21 3 1 686
+training blue green     0 0 9 3 1 586
+training verde rojo     0 1 17 1 1 772
+training green green    1 0 7 3 1 759
+training green green    1 0 8 3 1 538
+training rojo rojo      1 1 16 1 1 795
+training azul azul      1 1 23 2 1 843
+training blue red       0 0 10 1 1 573
+training red green      0 0 1 3 1 885
+training verde verde    1 1 20 3 1 661
+training rojo verde     0 1 13 3 1 542
+training blue blue      1 0 11 2 1 1292
+training azul rojo      0 1 22 1 1 731
+training red red        1 0 3 2 2 1136
+training red blue       0 0 2 2 1 798
+training blue blue      1 0 12 2 1 859
+training rojo rojo      1 1 15 1 1 610
+training red red        1 0 4 1 1 579
+training azul azul      1 1 24 2 1 590
+training green red      0 0 5 1 1 922
+training red red        1 0 4 1 1 513
+training rojo rojo      1 1 16 1 1 416
+training azul rojo      0 1 22 1 1 520
+training verde azul     0 1 18 2 1 583
+training azul verde     0 1 21 3 1 421
+training red red        1 0 3 1 1 585
+training rojo azul      0 1 14 2 1 879
+training red green      0 0 1 3 1 934
+training azul azul      1 1 24 2 1 1419
+training green blue     0 0 6 2 1 531
+training green red      0 0 5 1 1 690
+training blue red       0 0 10 1 1 434
+training blue blue      1 0 12 2 1 818
+training green green    1 0 8 3 1 685
+training rojo verde     0 1 13 3 1 616
+training blue green     0 0 9 3 1 545
+training red blue       0 0 2 2 1 553
+training rojo rojo      1 1 15 1 1 487
+training green green    1 0 7 3 1 878
+training azul azul      1 1 23 2 1 542
+training verde verde    1 1 19 3 1 676
+training verde rojo     0 1 17 1 1 591
+training verde verde    1 1 20 3 1 817
+training blue blue      1 0 11 2 1 582
+
+Creating data structure for StroopTest.2021-02-11-1456.data.170268f7-053e-478c-92da-c2de1dd74ccc.txt-1
+Creating data structure for StroopTest.2021-02-11-1456.data.170268f7-053e-478c-92da-c2de1dd74ccc.txt-0
+Analyzing data for español
+Mean consistent 756.4347826086956
+Std consistent 234.9321504432913
+Mean inconsistent 769.0833333333334
+Std inconsistent 241.5746807695063
+Stroop effect 12.648550724637744
+Is significant for language 1: Ttest_indResult(statistic=-0.17795435833947437, pvalue=0.859557497717811)
+Is significant for language 1: Ttest_indResult(statistic=-0.17795435833947437, pvalue=0.859557497717811)
+Analyzing data for ingles
+Mean consistent 833.0869565217391
+Std consistent 364.13672934209023
+Mean inconsistent 766.8260869565217
+Std inconsistent 175.0189187721326
+Stroop effect -66.26086956521738
+Is significant for language 0: Ttest_indResult(statistic=0.769258375000407, pvalue=0.4458499444760041)
+Is significant for language 0: Ttest_indResult(statistic=0.769258375000407, pvalue=0.4458499444760041)
