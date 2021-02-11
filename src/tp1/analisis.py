@@ -17,10 +17,12 @@ from matplotlib.ticker import MaxNLocator
 
 class DataAnalysis:
 
-    DIR = '/home/jgonzalez/dev/ditella-neurociencia-toma-decisiones/src/tp1/data/'
+    DIR = './data/'
     FILES = []
     LANGUAGES = []
     RESULTS = {}
+    SHOW_PLOT = False
+    SAVE_PLOT_AS_FILE = True
 
 
     def __init__(self):
@@ -162,7 +164,7 @@ class DataAnalysis:
 
     def plot_cons_incons(self, filename, language):
         n_groups = 2
-
+        language_name = self.RESULTS[filename][language]["language"]
         test = self.is_significant(filename, language)
 
         fig, ax = plt.subplots()
@@ -170,20 +172,26 @@ class DataAnalysis:
         rects1 = ax.bar(1, self.RESULTS[filename][language]["muCongruentes"], 0.3,
                         alpha=0.4, color='b',
                         yerr=self.RESULTS[filename][language]['stdCongruentes']/np.sqrt(len(self.RESULTS[filename][language]['consistent'])),
-                        label=f'Congruentes [{self.RESULTS[filename][language]["language"]}]')
+                        label=f'Congruentes [{language_name}]')
 
         rects2 = ax.bar(1 + 0.35, self.RESULTS[filename][language]["muIncongruentes"], 0.3,
                         alpha=0.4, color='r',
                         yerr=self.RESULTS[filename][language]['stdIncongruentes']/np.sqrt(len(self.RESULTS[filename][language]['inconsistent'])),
-                        label=f'Incongruentes [{self.RESULTS[filename][language]["language"]}]')
+                        label=f'Incongruentes [{language_name}]')
 
         plt.ylim([100,1600])
         plt.xticks([1,1.35], ('1', '2'))
         ax.set_ylabel('Response Time')
         ax.set_title(f'P={str(test[1])} \nFilename: {filename}')
         ax.legend(loc='upper left')
-        plt.show() 
 
+        if self.SHOW_PLOT:
+            plt.show() 
+        
+        if self.SAVE_PLOT_AS_FILE:
+            aux = filename.split('.')
+            image_name = 'results/' + aux[0] + '_' + aux[1] + '_' + aux[3] + language_name + '.png'
+            plt.savefig(image_name)
 
 if __name__ == "__main__":
     informe = DataAnalysis()
