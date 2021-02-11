@@ -100,10 +100,11 @@ class DataAnalysis:
         '''
         tabla = open(self.DIR + filename)
         i=0
-        while i < self.TRIALS: 
-            line=tabla.readline()
+        line = tabla.readline()
+        while line: 
             parsed_line=line.split()
             language = parsed_line[4]
+            line=tabla.readline()
             
             if language not in self.LANGUAGES:
                 self.LANGUAGES.append(language)
