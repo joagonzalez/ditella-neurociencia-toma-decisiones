@@ -19,7 +19,6 @@ class DataAnalysis:
 
     DIR = '/home/jgonzalez/dev/ditella-neurociencia-toma-decisiones/src/tp1/data/'
     FILES = []
-    TRIALS = 20
     LANGUAGES = []
     RESULTS = {}
 
