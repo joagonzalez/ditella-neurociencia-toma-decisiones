@@ -18,7 +18,7 @@ Repositorio con ejercicios y trabajos de la materia Neurociencia y Toma de Decis
     └── tpN
 11 directories
 ```
-# Ejecutar análisis TP1
+### Ejecutar análisis TP1
 ```
 ditella-neurociencia-toma-decisiones$ pip install -r requirements.txt
 
