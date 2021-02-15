@@ -11,14 +11,19 @@ import matplotlib.pyplot as plt
 
 class Monty:
 
-    REPETICIONES = 1000000
+    REPETICIONES = 100000
     PUERTAS = 3
     INTERACTIVO = False
+    ELEGIMOS = 3
     conteosimelaquedo=0 # contemos cuántas veces gano si me quedo con la puerta que elegí al principio
     conteosinomelaquedo=0 # contemos cuántas veces gano si cambio la puerta que elegí al principio
 
 
-    def __init__(self):
+    def __init__(self, puertas = None):
+        
+        if puertas is not None:
+            self.PUERTAS = int(puertas)
+
         self.descripcion()
 
         if self.INTERACTIVO:
@@ -26,10 +31,12 @@ class Monty:
 
 
     def descripcion(self):
+        print('-------------------------')
         print(f'Repeticiones: {self.REPETICIONES}')
         print(f'Puertas: {self.PUERTAS}')
+        print(f'Elegimos puerta: {self.ELEGIMOS}')
         print(f'Interactivo: {self.INTERACTIVO}')
-
+        
 
     def menu(self):
         
@@ -43,9 +50,9 @@ class Monty:
     def run(self):
         
         if self.INTERACTIVO:
-            elegimos = int(input('Ingrese una puerta donde cree que esta el auto: ')) #puerta que elegimos. Se puede cambiar.
+            elegimos = int(input(f'Ingrese una puerta donde cree que esta el auto (default: ): {self.ELEGIMOS}')) #puerta que elegimos. Se puede cambiar.
         else:
-            elegimos = 1
+            elegimos = self.ELEGIMOS
         
         for i in range(self.REPETICIONES + 1):           
             puertas = list(range(1, self.PUERTAS + 1)) # puertas que hay en el problema [1, 2 y 3]
@@ -55,7 +62,7 @@ class Monty:
                 puertas.remove(auto) # Si la que elegimos tiene el auto, entonces la puerta que deja Monty tiene que tener una cabra
                 monty = np.random.choice(puertas) #Monty elije DEJAR una entre las N-1 que quedaron
             else: #sino:
-                monty = auto # Si la que elegimos no tiene el auto y Monty remueve las otras, entonces elije la que tiene el auto
+                monty = auto # Si la que elegimos no tiene el auto y Monty remueve las otras, entonces elige la que tiene el auto
 
             
             # Ahora, momento de elegir. O me quedo con la que tenía, o elijo la otra. Veamos qué pasaría en ambos casos:
@@ -65,7 +72,7 @@ class Monty:
             # si cambio la que elegí al principio:
             puertas = [elegimos, monty] # lista que tiene la que elegimos y vamos a decidir cambiar y la que DEJO Monty
             puertas.remove(elegimos) # saco la que elegimos (porque la cambiamos)
-            nomelaquedo = puertas[0] # me quedo con alguna de las N-2 que sobra.
+            nomelaquedo = puertas[0] # me quedo con la que Monty dejo ya que cambie la que elegi al principio.
 
             # Si gano quedándomela, se suma 1 a ese conteo, y 0 al otro; si gano cambiándola, se suma 1 al otro conteo, y 0 a este.
             self.conteosimelaquedo += auto==melaquedo
@@ -82,8 +89,11 @@ class Monty:
 
 
 if __name__ == '__main__':
-    for i in [3, 5, 10]:
-        monty = Monty()
+    
+    PUERTAS_TEST = [3, 5, 10]
+
+    for i in PUERTAS_TEST:
+        monty = Monty(i)
         monty.PUERTAS = i
         monty.run()
         monty.analyze()
